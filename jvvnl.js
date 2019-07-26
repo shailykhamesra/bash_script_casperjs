@@ -20,7 +20,7 @@ casper.then(function() {
     this.echo('** Form submitted for email -> '+ txtEmail + ', k-number -> ' + txtCustomerID +' **');
     casper.wait(100, function() {
       this.echo('** Fetching result for email -> '+ txtEmail + ', k-number -> ' + txtCustomerID +' **');
-      casper.capture('imag_'+txtCustomerID+'.png');
+      casper.capture('image_'+txtCustomerID+'.png');
       if (this.exists("#tb_confirm")) {
         this.then(function() {
           var amount_payable = this.getElementInfo('tr:nth-of-type(11) td:nth-of-type(2)').text.trim(); 
