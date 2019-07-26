@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+echo 'how many user bill would you like to pasre?';
+read number
+
+echo '** Creating csv sheet **';
+phantomjs spreadsheet.js
+
+for num in $(eval echo "{1..$number}")
+do
+  echo $num
+  phantomjs jvvnl.js $num
+done
+
+echo '** Please check your jvvnl.csv file for data **';
